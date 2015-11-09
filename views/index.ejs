@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>11</title>
+    <!-- stylesheets -->
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href='/stylesheets/pick.css'/>
+
+    
+
+	<!-- external javascript -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
+  	<!-- self javascript -->
+    <script src="/javascripts/team-selection.js"></script>
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<body>
+
+  <div class="global-section">
+          
+      <div class="col-md-4">
+        <div class="pick-teams-section">
+  		    <h1>Pick Teams</h1>
+            <% teams.forEach( function(team) { %>
+              <div class="team text-center">
+                <img class="img-responsive team-logo" src="<%= team.logourl %>">
+                <h4 class="team-name"><%= team.teamname %></h4>
+                <button class="select-teams">Select Team</button>
+              </div>
+            <% }); %> 
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="results-section">
+        <div class="col-md-5">
+          <div class="team1">
+    
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="versus">
+
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="team2">
+    
+          </div>
+        </div>
+
+        <div class="predict-button-section">
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</body>
 </html>
