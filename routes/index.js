@@ -35,10 +35,10 @@ router.post('/', function(req, res, result) {
 
 	var net = new brain.NeuralNetwork(); 
 
-			var scores = [{input: { Arsenal: 1, CrystalPalace: 0 }, output: {Arsenal: 1} },
-						 {input: { Arsenal: 0.5, ManchesterCity: 0.5 }, output: {Tie: 1} },
+	var scores = [{input: { Arsenal: 1, CrystalPalace: 0 }, output: {Arsenal: 1} },
+		 				 {input: { Arsenal: 0.5, ManchesterCity: 0.5 }, output: {Tie: 1} },
 						 {input: { Arsenal: 0.5, Tottenham: 0.5 }, output: {Tie: 1} },
-						 {input: { Arsenal: 1, Burnely: 0 }, output: {Arsenal: 1} },
+						 {input: { Arsenal: 1, Burnley: 0 }, output: {Arsenal: 1} },
 						 {input: { Arsenal: 0, ManchesterUnited: 1 }, output: {ManchesterUnited: 1} },
 						 {input: { Arsenal: 1, Southampton: 0 }, output: {Arsenal: 1} },
 						 {input: { Arsenal: 1, Newcastle: 0 }, output: {Arsenal: 1} },
@@ -89,7 +89,7 @@ router.post('/', function(req, res, result) {
 						 {input: { Burnley: 0, Swansea: 1 }, output: {Swansea: 1} },
 						 {input: { Burnley: 1, ManchesterCity: 0 }, output: {Burnley: 1} },
 						 {input: { Burnley: 0.5, Tottenham: 0.5 }, output: {Tie: 1} },
-						 {input: { Burnley: 0, Arsenal: 1 }, output: {Swansea: 1} },
+						 {input: { Burnley: 0, Arsenal: 1 }, output: {Arsenal: 1} },
 						 {input: { Burnley: 0, Leicester: 1 }, output: {Leicester: 1} },
 						 {input: { Burnley: 0.5, StokeCity: 0.5 }, output: {Tie: 1} },
 						 {input: { Chelsea: 1, Leicester: 0 }, output: {Chelsea: 1} },
@@ -172,17 +172,21 @@ router.post('/', function(req, res, result) {
 	var x = individual[0];
   var y = individual[1];
 
+
   for (var i = 0; i < scores.length; i++) {
-  	console.log(Object.keys(scores[i].input));
+  	var historyScore = (Object.keys(scores[i].input));
+
+  	if ((x == historyScore[0] || x == historyScore[1]) && (y == historyScore[0] || y == historyScore[1])) {
+  		var trainMe = scores[i];
+  		console.log(trainMe);
+   	}
   }
 
-	net.train([
-	            ]);
+	net.train([trainMe]);
 
-	var output = net.run({ x: 0.5, y: 0 });
+	var output = net.run({ x: 0.5, y: 0.5 });
 
-	console.log(x, y);
-	console.log(output)
+	console.log(output);
 
 
 
