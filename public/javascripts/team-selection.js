@@ -18,8 +18,8 @@ $(function() {
 		else if (count === 0) {	
 			$(this).parent().removeClass("team").addClass("two-teams");
 			$(this).parent().removeClass("team-name").addClass("team-name-chosen");
-      $(this).parent().appendTo(".team1");
-      $(".versus").html('<h1>vs</h1>');
+      $(this).parent().appendTo(".team1").hide().fadeIn(600);
+      $(".versus").html('<h1>vs</h1>').hide().fadeIn(600);
       $(this).remove();
       
       count++;
@@ -28,7 +28,7 @@ $(function() {
     else {
 			$(this).parent().removeClass('team').addClass("two-teams");
 			$(this).parent().removeClass("team-name").addClass("team-name-chosen");
-			$(this).parent().appendTo(".team2");
+			$(this).parent().appendTo(".team2").hide().fadeIn(600);
 			$(this).remove();
 
 			var team2 = $('.team-name-chosen h4').each(function(){
@@ -37,8 +37,8 @@ $(function() {
 
 			count++;
 
-			$(".predict-button-section").append(predictbutton);
-			$(".predict-button-section").append(refreshbutton);
+			$(".predict-button-section").append(predictbutton).hide().fadeIn(300);
+			$(".predict-button-section").append(refreshbutton).hide().fadeIn(300);
     }
 	});
 
@@ -46,7 +46,6 @@ $(function() {
 	// sends two teams into brain
 	$(predictbutton).on('click', function(){
 		var teamString = selectedTeams.toString();
-		console.log(teamString);
 
 		$.ajax ({
 			type: 'POST',

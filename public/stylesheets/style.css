@@ -1,8 +1,39 @@
 
+body {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	font-weight: 600;
+}
+
+.modal {
+	margin-top: 7%;
+}
+
+.modal-content {
+	background-color: #fafafa;
+}
+
+.btn-default {
+	background-color: #ffffff;
+	color: #000;
+	font-weight: 600;
+	border: none;
+}
+
+.btn-default:hover {
+	background-color: #000;
+	color: #fff;
+	font-weight: 600;
+	border: none;
+}
+
+
 /* pick team section*/
 
 .team-logo {
-	height: 60px;
 	width: 60px;
 	text-align: center;
 }
@@ -27,12 +58,14 @@
 	padding-left: 20px;
 	padding-top: 20px;
 	overflow: scroll;
+	font-weight: 600;
 }
 
 .team {
 	border-bottom: 4px solid #fafafa;
 	padding-top: 4%;
 	padding-bottom: 4%;
+	font-weight: 600;
 }
 
 /* results section*/ 
@@ -42,7 +75,7 @@
 	margin-left: -15px;
 	overflow: none;
 	height: 775px;
-	background: url('http://st.depositphotos.com/1779253/1899/i/950/depositphotos_18993071-White-stripe-on-the-green-soccer-field-from-top-view.jpg');
+	background: url('../images/football_field.jpg');
 }
 
 .team1{

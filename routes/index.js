@@ -28,7 +28,7 @@ router.get('/', function (req, res) {
 
 
 // create a route for post ajax 
-router.post('/', function(req, res) {
+router.post('/', function(req, res, result) {
 
 	var teams = req.body.teams;
 	var individual = teams.split(',');
@@ -46,25 +46,22 @@ router.post('/', function(req, res) {
 						 {input: { Liverpool: 1, Chelsea: 0 }, output: {Liverpool: 1} },
 						 {input: { Liverpool: 1, Chelsea: 0 }, output: {Liverpool: 1} },
 						 {input: { Liverpool: 0, Chelsea: 1 }, output: {Chelsea: 1} },
-						 {input: { Arsenal: 0, AstonVilla: 1 }, output: {AstonVilla: 1} },
-						 {input: { Arsenal: 0, AstonVilla: 1 }, output: {AstonVilla: 1} },
+						 {input: { Arsenal: 1, AstonVilla: 0 }, output: {Arsenal: 1} },
+						 {input: { Arsenal: 1, AstonVilla: 0 }, output: {Arsenal: 1} },
 	           ]);
 
-	var output = net.run({ x: 0, y: 0 });
+	var output = net.run({ x: 0.5, y: 0.5 });
 
 	console.log(x, y);
-	console.log(output);
+	console.log(output)
+
+
 
 	// // save prediction to db eventually
 	// newUserlist.save(function(err) {
 	// 	if (err) console.log(err);
 	// 	res.send("hello");
 	// })
-});
-
-router.get('/', function (req, res) {
-	console.log(req.body.individual);
-
 });
 
 module.exports = router;
