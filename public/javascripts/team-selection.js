@@ -52,14 +52,11 @@ $(function() {
 			url: '/',
 			data: { teams: teamString },
 			success: function(data){
-				console.log(data);
+				$(".prediction-result").append(data);
 			},
 			error: function() {
 				console.log("error");
 			},
-			complete: function() {
-				console.log("complete");
-			}
 		});
 	}); // end of predict button
 

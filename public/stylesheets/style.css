@@ -16,16 +16,20 @@ h1, h2, h3, h4, h5, h6, p {
 	background-color: #fafafa;
 }
 
+.modal-body h4 {
+	line-height: 30px;
+}
+
 .btn-default {
-	background-color: #ffffff;
-	color: #000;
+	background-color: #000;
+	color: #fff;
 	font-weight: 600;
 	border: none;
 }
 
 .btn-default:hover {
-	background-color: #000;
-	color: #fff;
+	background-color: gray;
+	color: #000;
 	font-weight: 600;
 	border: none;
 }
@@ -84,6 +88,13 @@ h1, h2, h3, h4, h5, h6, p {
 
 .team2 {
 	height: 50px;
+}
+
+.prediction-result {
+	color: #fff;
+	text-align: center;
+	font-size: 50px;
+	margin-top: 5%;
 }
 
 .two-teams {
