@@ -51,8 +51,13 @@ $(function() {
 			type: 'POST',
 			url: '/',
 			data: { teams: teamString },
+			beforeSend: function(){
+        $("#brain").css("height","50px").show().fadeIn(200);
+    	},
 			success: function(data){
-				$(".prediction-result").append(data);
+				var poop = $("#brain").hide();
+				console.log(poop);
+				$(".prediction-result").append(data).hide().fadeIn(300);
 			},
 			error: function() {
 				console.log("error");
