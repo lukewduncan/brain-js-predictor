@@ -83,7 +83,8 @@ h1, h2, h3, h4, h5, h6, p {
 	margin-left: -15px;
 	overflow: none;
 	height: 775px;
-	background: url('../images/football_field.jpg');
+/*	background: url('../images/football_field.jpg');
+*/	background-color: #2ecc71;
 }
 
 .team1{
@@ -97,7 +98,7 @@ h1, h2, h3, h4, h5, h6, p {
 .prediction-result {
 	color: #fff;
 	text-align: center;
-	font-size: 50px;
+	font-size: 70px;
 	margin-top: 5%;
 }
 

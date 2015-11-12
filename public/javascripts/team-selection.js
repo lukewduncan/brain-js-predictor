@@ -55,7 +55,7 @@ $(function() {
         // $("#brain").css("height","50px").show().fadeIn(200);
     	},
 			success: function(data){
-				$(".prediction-result").append(data).fadeIn(300);
+				$(".prediction-result").append(data).hide().fadeIn(1500);
 			},
 			error: function() {
 				console.log("error");
@@ -69,5 +69,17 @@ $(function() {
 		location.reload();
 	})
 
+	$(window).load(function(){
+    if ($.cookie('modal_shown') == null) {
+        $.cookie('modal_shown', 'yes', { expires: 7, path: '/' });
+        $('#myModal').modal('show');
+    }
+  });
+
+  // function pulse() {
+  //   	$('.blink').fadeIn(500);
+  //     	$('.blink').fadeOut(1000);
+  //   };
+  //   setInterval(pulse, 1000);
 }) // end of document ready
 
