@@ -52,12 +52,10 @@ $(function() {
 			url: '/',
 			data: { teams: teamString },
 			beforeSend: function(){
-        $("#brain").css("height","50px").show().fadeIn(200);
+        // $("#brain").css("height","50px").show().fadeIn(200);
     	},
 			success: function(data){
-				var poop = $("#brain").hide();
-				console.log(poop);
-				$(".prediction-result").append(data).hide().fadeIn(300);
+				$(".prediction-result").append(data).fadeIn(300);
 			},
 			error: function() {
 				console.log("error");
@@ -70,9 +68,6 @@ $(function() {
 	$(refreshbutton).on('click', function(){
 		location.reload();
 	})
-
-
-
 
 }) // end of document ready
 

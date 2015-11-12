@@ -11,6 +11,7 @@
 
 	<!-- external javascript -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
   	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
@@ -89,7 +90,10 @@
 
 <script type="text/javascript">
   $(window).load(function(){
-      $('#myModal').modal('show');
+    if ($.cookie('modal_shown') == null) {
+        $.cookie('modal_shown', 'yes', { expires: 7, path: '/' });
+        $('#myModal').modal('show');
+    }
   });
 </script>
 </body>
