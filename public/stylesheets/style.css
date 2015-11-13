@@ -83,8 +83,8 @@ h1, h2, h3, h4, h5, h6, p {
 	margin-left: -15px;
 	overflow: none;
 	height: 775px;
-/*	background: url('../images/football_field.jpg');
-*/	background-color: #2ecc71;
+	background: url('../images/football_field.jpg');
+	background-color: #2ecc71;
 }
 
 .team1{
