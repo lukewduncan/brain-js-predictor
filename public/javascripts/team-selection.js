@@ -18,14 +18,14 @@ $(function() {
 		else if (count === 0) {	
 			$(this).parent().removeClass("team").addClass("two-teams");
 			$(this).parent().removeClass("team-name").addClass("team-name-chosen");
-      $(this).parent().appendTo(".team1").hide().fadeIn(600);
-      $(".versus").html('<h1>vs</h1>').hide().fadeIn(600);
-      $(this).remove();
+      			$(this).parent().appendTo(".team1").hide().fadeIn(600);
+      			$(".versus").html('<h1>vs</h1>').hide().fadeIn(600);
+      			$(this).remove();
       
-      count++;
-    } 
+      		count++;
+		} 
     // if one team has been selected, input next team into .team2 div
-    else {
+    		else {
 			$(this).parent().removeClass('team').addClass("two-teams");
 			$(this).parent().removeClass("team-name").addClass("team-name-chosen");
 			$(this).parent().appendTo(".team2").hide().fadeIn(600);
